@@ -38,7 +38,7 @@ export default function AestheticHighlight() {
               <p className="text-xs text-[#434843]">Renewable sourcing from Nordic forests.</p>
             </div>
             <div className="p-6 bg-white rounded-xl border border-outline-variant/30">
-              <span className="material-symbols-outlined text-secondary mb-3">handshake</span>
+              <span className="material-symbols-outlined text-secondary mb-3">add_chart</span>
               <h4 className="text-sm font-bold text-charcoal mb-1">Hand-Finished</h4>
               <p className="text-xs text-[#434843]">Artisan attention to every joint.</p>
             </div>
