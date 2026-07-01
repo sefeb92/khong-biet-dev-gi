@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/layout/CartDrawer";
 import { CartProvider } from "@/context/CartContext";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           <main className="flex-grow pt-20">{children}</main>
+          <Footer />
           <CartDrawer />
         </CartProvider>
       </body>
