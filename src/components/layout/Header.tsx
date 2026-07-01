@@ -2,10 +2,20 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
   const { cartCount, openCart } = useCart();
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: 'Living', href: '/rooms/living' },
+    { name: 'Dining', href: '/rooms/dining' },
+    { name: 'Bedroom', href: '/rooms/bedroom' },
+    { name: 'Lookbook', href: '/rooms' },
+    { name: 'Sustainability', href: '#' }
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-outline-variant/30">
@@ -21,36 +31,21 @@ export default function Header() {
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
-            <Link 
-              href="/rooms/living" 
-              className="text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
-            >
-              Living
-            </Link>
-            <Link 
-              href="/rooms/dining" 
-              className="text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
-            >
-              Dining
-            </Link>
-            <Link 
-              href="/rooms/bedroom" 
-              className="text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
-            >
-              Bedroom
-            </Link>
-            <Link 
-              href="/rooms" 
-              className="text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
-            >
-              Lookbook
-            </Link>
-            <a 
-              href="#" 
-              className="text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
-            >
-              Sustainability
-            </a>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={isActive
+                    ? "text-primary border-b-2 border-primary pb-1 font-bold text-sm tracking-wider"
+                    : "text-[#434843] hover:text-primary transition-colors duration-200 text-sm font-semibold tracking-wider"
+                  }
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
