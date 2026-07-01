@@ -1,23 +1,26 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Features() {
+  const { t } = useLanguage();
+  
   const items = [
     {
       icon: 'architecture',
-      title: 'Minimalist Design',
-      desc: 'Embracing the Scandinavian philosophy of "less is more," our pieces focus on clean lines and functional beauty that clears the mind.'
+      title: t('features').f1_title,
+      desc: t('features').f1_desc
     },
     {
       icon: 'forest',
-      title: '100% Natural Wood',
-      desc: 'Sustainably sourced oak, ash, and walnut from Nordic forests, treated with organic oils to preserve the living texture of the timber.'
+      title: t('features').f2_title,
+      desc: t('features').f2_desc
     },
     {
       icon: 'local_shipping',
-      title: 'Conscious Delivery',
-      desc: 'Carbon-neutral shipping directly to your sanctuary. We handle every piece with the utmost care, ensuring it arrives ready for its new home.'
+      title: t('features').f3_title,
+      desc: t('features').f3_desc
     }
   ];
 
@@ -27,7 +30,7 @@ export default function Features() {
       <section className="py-16 px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl font-bold text-primary mb-4">Our Commitment to Calm</h2>
+            <h2 className="font-serif text-3xl font-bold text-primary mb-4">{t('features').title}</h2>
             <div className="w-12 h-0.5 bg-secondary mx-auto" />
           </div>
           
@@ -63,9 +66,9 @@ export default function Features() {
           </div>
           
           <div className="lg:pl-12 space-y-6">
-            <h2 className="font-serif text-3xl font-bold text-primary">Join the NordicNest Journal</h2>
+            <h2 className="font-serif text-3xl font-bold text-primary">{t('features').newsletter_title}</h2>
             <p className="text-sm text-[#434843] leading-relaxed">
-              Receive seasonal styling guides, exclusive lookbook previews, and stories of craftsmanship delivered to your inbox.
+              {t('features').newsletter_desc}
             </p>
             <form 
               className="flex flex-col sm:flex-row gap-4" 
@@ -84,7 +87,7 @@ export default function Features() {
                 className="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-md text-sm font-semibold hover:bg-tertiary-fixed transition-all duration-300 transform active:scale-95 tracking-wider" 
                 type="submit"
               >
-                Đăng ký
+                {t('features').subscribe}
               </button>
             </form>
           </div>

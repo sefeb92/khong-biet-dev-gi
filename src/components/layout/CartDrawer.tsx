@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useCart } from '@/context/CartContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CartDrawer() {
   const { 
@@ -12,11 +13,20 @@ export default function CartDrawer() {
     removeFromCart, 
     cartTotal 
   } = useCart();
+  const { language, t } = useLanguage();
 
-  const formattedTotal = new Intl.NumberFormat('en-US', {
+  const formattedTotal = new Intl.NumberFormat(language === 'vi' ? 'vi-VN' : 'en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'VND',
   }).format(cartTotal);
+
+  const getTranslatedName = (fullName: string) => {
+    const parts = fullName.split(' - ');
+    if (parts.length > 1) {
+      return language === 'vi' ? parts[0].trim() : parts[1].trim();
+    }
+    return fullName;
+  };
 
   return (
     <div 
@@ -40,7 +50,7 @@ export default function CartDrawer() {
       >
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h3 className="font-serif text-2xl font-bold text-primary">Your Basket</h3>
+          <h3 className="font-serif text-2xl font-bold text-primary">{t('cart')}</h3>
           <button 
             type="button"
             onClick={closeCart}
@@ -57,13 +67,13 @@ export default function CartDrawer() {
               <span className="material-symbols-outlined text-gray-400 text-6xl mb-4">
                 shopping_basket
               </span>
-              <p className="text-lg text-[#434843]">Your basket is currently empty.</p>
+              <p className="text-sm text-[#434843]">{t('emptyCart')}</p>
               <button 
                 type="button"
                 onClick={closeCart}
                 className="mt-6 text-primary border-b border-primary pb-1 text-sm font-semibold hover:opacity-70 transition-opacity uppercase tracking-wider"
               >
-                Start Shopping
+                {language === 'vi' ? 'Tiếp tục mua sắm' : 'Start Shopping'}
               </button>
             </div>
           ) : (
@@ -73,15 +83,15 @@ export default function CartDrawer() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src={item.image_url} 
-                    alt={item.name} 
+                    alt={getTranslatedName(item.name)} 
                     className="w-20 h-20 object-cover bg-bone rounded"
                   />
                   <div className="flex-grow">
-                    <h4 className="font-serif text-base font-semibold text-primary">{item.name}</h4>
+                    <h4 className="font-serif text-base font-semibold text-primary">{getTranslatedName(item.name)}</h4>
                     <p className="text-sm text-secondary font-medium">
-                      {new Intl.NumberFormat('en-US', {
+                      {new Intl.NumberFormat(language === 'vi' ? 'vi-VN' : 'en-US', {
                         style: 'currency',
-                        currency: 'USD',
+                        currency: 'VND',
                       }).format(item.price)}
                     </p>
                     
@@ -114,7 +124,7 @@ export default function CartDrawer() {
         <div className="mt-auto pt-8 border-t border-outline-variant/30">
           <div className="flex justify-between items-center mb-6">
             <span className="text-xs uppercase tracking-wider text-[#434843] font-semibold">
-              Estimated Total
+              {t('subtotal')}
             </span>
             <span className="font-serif text-2xl font-bold text-primary">
               {formattedTotal}
@@ -130,7 +140,7 @@ export default function CartDrawer() {
                 : 'bg-charcoal text-white hover:bg-deep-forest'
             }`}
           >
-            Checkout
+            {t('checkout')}
           </button>
         </div>
       </div>

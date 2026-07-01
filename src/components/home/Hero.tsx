@@ -1,8 +1,11 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+  
   const scrollToRooms = () => {
     const element = document.getElementById('rooms-section');
     if (element) {
@@ -27,13 +30,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
         <div className="max-w-2xl bg-white/40 backdrop-blur-md p-10 rounded-xl border border-white/30">
           <span className="text-[#705b3e] text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">
-            Spring Collection 2026
+            {t('hero').collection}
           </span>
           <h1 className="font-serif text-charcoal text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-            Finding Harmony in the Everyday
+            {t('hero').title}
           </h1>
           <p className="font-sans text-base sm:text-lg text-[#434843] mb-8 max-w-lg leading-relaxed">
-            Experience the curated warmth of our new seasonal arrivals. Handcrafted textures and sustainable materials designed to elevate your sanctuary.
+            {t('hero').desc}
           </p>
           <div className="flex flex-wrap gap-4">
             <button 
@@ -41,14 +44,14 @@ export default function Hero() {
               onClick={scrollToRooms}
               className="bg-charcoal text-white px-8 py-4 rounded-md text-sm font-semibold uppercase tracking-wider hover:bg-deep-forest transition-colors duration-300 scale-95 active:scale-90"
             >
-              Shop The Look
+              {t('hero').shop}
             </button>
             <button 
               type="button"
               onClick={scrollToRooms}
               className="bg-white/80 border border-charcoal/20 text-charcoal px-8 py-4 rounded-md text-sm font-semibold uppercase tracking-wider hover:bg-bone transition-colors duration-300 scale-95 active:scale-90"
             >
-              Explore Rooms
+              {t('hero').explore}
             </button>
           </div>
         </div>
@@ -57,7 +60,7 @@ export default function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <span className="text-[10px] font-semibold uppercase tracking-widest text-charcoal/60">
-          Discover
+          {t('hero').discover}
         </span>
         <div className="w-px h-12 bg-charcoal/20" />
       </div>

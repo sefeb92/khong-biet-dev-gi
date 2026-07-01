@@ -1,8 +1,11 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function AestheticHighlight() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-16 bg-surface-container-low overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
@@ -22,25 +25,25 @@ export default function AestheticHighlight() {
         {/* Right Column: Info details */}
         <div className="space-y-6">
           <span className="text-sm font-semibold text-sage uppercase tracking-[0.3em] block">
-            Material Integrity
+            {t('aesthetic').subtitle}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-deep-forest leading-tight">
-            Designed to endure, crafted to be cherished.
+            {t('aesthetic').title}
           </h2>
           <p className="font-sans text-base sm:text-lg text-[#434843] leading-relaxed">
-            We believe in furniture that ages with grace. Our solid oak frames and organic cotton textiles are sourced from FSC-certified forests and sustainable mills, ensuring your home feels as good as it looks.
+            {t('aesthetic').desc}
           </p>
           
           <div className="pt-6 grid grid-cols-2 gap-6">
             <div className="p-6 bg-white rounded-xl border border-outline-variant/30">
               <span className="material-symbols-outlined text-secondary mb-3">forest</span>
-              <h4 className="text-sm font-bold text-charcoal mb-1">Eco-Conscious</h4>
-              <p className="text-xs text-[#434843]">Renewable sourcing from Nordic forests.</p>
+              <h4 className="text-sm font-bold text-charcoal mb-1">{t('aesthetic').eco_title}</h4>
+              <p className="text-xs text-[#434843]">{t('aesthetic').eco_desc}</p>
             </div>
             <div className="p-6 bg-white rounded-xl border border-outline-variant/30">
               <span className="material-symbols-outlined text-secondary mb-3">add_chart</span>
-              <h4 className="text-sm font-bold text-charcoal mb-1">Hand-Finished</h4>
-              <p className="text-xs text-[#434843]">Artisan attention to every joint.</p>
+              <h4 className="text-sm font-bold text-charcoal mb-1">{t('aesthetic').hand_title}</h4>
+              <p className="text-xs text-[#434843]">{t('aesthetic').hand_desc}</p>
             </div>
           </div>
         </div>

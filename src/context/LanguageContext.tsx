@@ -31,6 +31,11 @@ const translations = {
       explore: 'Explore Rooms',
       discover: 'Discover',
     },
+    roomGrid: {
+      title: 'A Space for Every Story',
+      desc: 'Browse our signature room collections, where functional design meets natural beauty. Each piece is selected for its ability to create a lasting sense of home.',
+      viewAll: 'View All Spaces'
+    },
     aesthetic: {
       subtitle: 'Material Integrity',
       title: 'Designed to endure, crafted to be cherished.',
@@ -73,6 +78,11 @@ const translations = {
       shop: 'Mua bộ sưu tập',
       explore: 'Khám phá các phòng',
       discover: 'Khám phá',
+    },
+    roomGrid: {
+      title: 'Mỗi Không Gian Một Câu Chuyện',
+      desc: 'Duyệt qua các bộ sưu tập phòng đặc trưng của chúng tôi, nơi thiết kế công năng hòa quyện cùng vẻ đẹp tự nhiên. Mỗi sản phẩm được chọn lọc để kiến tạo cảm giác ấm cúng của gia đình.',
+      viewAll: 'Xem tất cả không gian'
     },
     aesthetic: {
       subtitle: 'Sự trọn vẹn của vật liệu',

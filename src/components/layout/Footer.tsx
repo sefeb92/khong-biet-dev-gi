@@ -2,8 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-deep-forest text-bone pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-8">
@@ -13,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-col space-y-6">
             <span className="font-serif text-2xl font-bold tracking-tight text-primary-fixed">NordicNest</span>
             <p className="text-on-primary-container/80 text-sm leading-relaxed">
-              Crafting quiet moments of domestic bliss through honest materials and timeless Scandinavian design since 2014. Handcrafted in Scandinavia.
+              {t('footer').brand_desc}
             </p>
             <div className="flex space-x-5">
               <a className="text-on-primary-container hover:text-primary-fixed transition-colors" href="#" aria-label="Camera">
@@ -30,7 +33,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">Collection</h4>
+            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">{t('footer').col_title}</h4>
             <ul className="space-y-4 text-sm">
               <li><Link className="text-on-primary-container hover:text-primary-fixed transition-colors" href="/rooms/living">Living</Link></li>
               <li><Link className="text-on-primary-container hover:text-primary-fixed transition-colors" href="/rooms/dining">Dining</Link></li>
@@ -42,7 +45,7 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">Support</h4>
+            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">{t('footer').sup_title}</h4>
             <ul className="space-y-4 text-sm">
               <li><a className="text-on-primary-container hover:text-primary-fixed transition-colors" href="#">Shipping & Returns</a></li>
               <li><a className="text-on-primary-container hover:text-primary-fixed transition-colors" href="#">Care Guides</a></li>
@@ -54,7 +57,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">Contact Us</h4>
+            <h4 className="text-xs uppercase tracking-widest text-primary-fixed-dim mb-8 font-bold">{t('footer').con_title}</h4>
             <div className="space-y-4 text-sm text-on-primary-container/80">
               <p className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-sm mt-1">location_on</span>
@@ -75,7 +78,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary-container/30 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-on-primary-container/60">
-            © 2026 NordicNest AB. All rights reserved.
+            {t('footer').rights}
           </p>
           <div className="flex space-x-8 text-xs text-on-primary-container/60">
             <a className="hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
