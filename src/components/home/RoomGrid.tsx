@@ -59,7 +59,19 @@ export default function RoomGrid() {
         if (error) throw error;
         
         if (data && data.length > 0) {
-          setRooms(data);
+          const sortedData = [...data].sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+            const getOrder = (name: string) => {
+              if (name.includes('living') || name.includes('khách')) return 0;
+              if (name.includes('dining') || name.includes('ăn')) return 1;
+              if (name.includes('bedroom') || name.includes('ngủ')) return 2;
+              if (name.includes('workspace') || name.includes('làm việc')) return 3;
+              return 99;
+            };
+            return getOrder(nameA) - getOrder(nameB);
+          });
+          setRooms(sortedData);
         } else {
           // Fallback to static mock data if DB table is empty
           setRooms(MOCK_FALLBACK_ROOMS);
