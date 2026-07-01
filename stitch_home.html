@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NordicNest | The Art of Scandinavian Living</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#b7ccb9",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#b7ccb9",
+                    "primary": "#334537",
+                    "tertiary-fixed": "#ffdcbd",
+                    "on-secondary-fixed": "#281903",
+                    "on-primary-fixed": "#0e1f13",
+                    "inverse-on-surface": "#f2f1ec",
+                    "secondary-fixed": "#fcdeb9",
+                    "tertiary-fixed-dim": "#eebd8e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#434843",
+                    "surface-variant": "#e4e2dd",
+                    "surface-container-highest": "#e4e2dd",
+                    "secondary-fixed-dim": "#dfc29e",
+                    "on-background": "#1b1c19",
+                    "on-primary-fixed-variant": "#394b3d",
+                    "deep-forest": "#2C3E35",
+                    "outline-variant": "#c3c8c1",
+                    "charcoal": "#2D2D2D",
+                    "on-secondary-fixed-variant": "#574328",
+                    "surface-tint": "#506354",
+                    "secondary": "#705b3e",
+                    "on-secondary-container": "#755f42",
+                    "tertiary-container": "#75512b",
+                    "on-primary-container": "#c0d5c2",
+                    "surface-container-high": "#eae8e3",
+                    "error-container": "#ffdad6",
+                    "background": "#fbf9f4",
+                    "secondary-container": "#f9dbb6",
+                    "surface": "#fbf9f4",
+                    "on-tertiary-fixed": "#2c1600",
+                    "on-primary": "#ffffff",
+                    "outline": "#737872",
+                    "surface-dim": "#dbdad5",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1b1c19",
+                    "primary-fixed": "#d3e8d5",
+                    "sage": "#8A9A86",
+                    "on-tertiary-fixed-variant": "#61401b",
+                    "bone": "#F2EFE9",
+                    "tertiary": "#5b3a16",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#30312e",
+                    "primary-container": "#4a5d4e",
+                    "surface-container-low": "#f5f3ee",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#f0eee9",
+                    "surface-bright": "#fbf9f4",
+                    "on-tertiary-container": "#f8c696"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem",
+                    "gutter": "2rem",
+                    "margin-edge": "2rem",
+                    "stack-md": "1.5rem",
+                    "stack-lg": "4rem",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hotspot-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .shoppable-image-container:hover .hotspot-label {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #334537; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-outline-variant/30">
+<nav class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight" href="#">NordicNest</a>
+<ul class="hidden md:flex gap-8 items-center">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Living</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Dining</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Bedroom</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Lookbook</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md" href="#">Sustainability</a></li>
+</ul>
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-primary transition-transform active:scale-90">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-transform active:scale-90">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-transform active:scale-90 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-[10px] text-white w-4 h-4 flex items-center justify-center rounded-full">0</span>
+</button>
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[90vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Hero image of a cozy Scandinavian living room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc43qdlUt6FHe9NXKawudWNBS_NeB9pZu1mufDGHpURTgGq3gSGxPreipPTotp0IU0vZZ8b0EQp8Ejl1iVifaoCyUDOAQeZMpL3FG_YM-fERIYyYkTaf6squNBYQFn_wHCQR0gW9YVuvi3lDWxuuapC-O26NVKcxHO-Zbh-oG5nWML7Stl9VL5RUX2dN3wo9uus3PYI1_rykIcmtZl0TbdNo162nVrxnd_6QyTHhAM1dz7plUammq9ne458rYsra7LPA"/>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<div class="relative z-10 px-margin-edge max-w-container-max mx-auto w-full">
+<div class="max-w-xl bg-bone/30 backdrop-blur-xl p-stack-lg border border-white/20 rounded-lg">
+<h1 class="font-display-lg text-display-lg text-white mb-stack-md leading-tight">The Art of <br/>Scandinavian Living</h1>
+<p class="font-body-lg text-body-lg text-white/90 mb-stack-lg">Discover the beauty of Hygge through our curated collection of artisanal furniture and rustic textiles.</p>
+<a class="inline-block bg-charcoal text-white px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-deep-forest transition-colors duration-300" href="#collections">
+                        Shop the Collection
+                    </a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white">
+<span class="material-symbols-outlined text-4xl">expand_more</span>
+</div>
+</section>
+<!-- Featured Collections - Bento Grid Style -->
+<section class="py-stack-lg px-margin-edge max-w-container-max mx-auto" id="collections">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-4">
+<div>
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2 block">Curated Categories</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Explore Our House</h2>
+</div>
+<a class="text-primary font-label-md text-label-md border-b border-primary pb-1 flex items-center gap-2 hover:opacity-70 transition-opacity" href="#">
+                    View All Categories <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px] md:h-[600px]">
+<!-- Living Room -->
+<div class="md:col-span-8 group relative overflow-hidden bg-bone">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A sprawling, minimalist living room with a large linen sofa, warm oak coffee table, and soft morning light streaming through tall windows, showcasing Scandinavian hygge style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOBoIMjaidn4qXzIe4XVSWuGvTiiL9MbFnNNbYt9dnoewW4594ECwjk_iz8xSa0JuQkvkZCNckgyh3wci08YuwGz6tL6bkfOmtcLf7MkLnKGU1u5bV6kM5O1__2ExycqFP92woLq8zKsIeUyoG6XV2tEvQPQZXlDYtrmsL_6YFvtN6n2tH5geAUrKcbWqE0_QuR6ai6bQYfIiXDyraNyrefOO3IQOCE8qbt6wzE8gvII5lWocIa4au')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Living Room</h3>
+<p class="font-body-md text-body-md text-white/80 mb-4">Comfort meets craftsmanship.</p>
+<button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-2 font-label-sm text-label-sm uppercase hover:bg-white hover:text-charcoal transition-colors">Discover</button>
+</div>
+</div>
+<!-- Dining Room -->
+<div class="md:col-span-4 group relative overflow-hidden bg-bone">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A warm dining space featuring a solid oak table set with ceramic plates, surrounded by elegant wooden chairs in a bright, airy room with neutral tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUPRoSf3Lk4AwZdRUvM1Q7kxFMc64fAsaUqpGHN9_mJvmUD2roEl2J1Vwzq4GDAX8FCVf7wgdcv8DFsW0HdIxtBaudrEWB0OJ5HveUdrfrgZJCbsio1xYzA8m2Aa_igR-zkJ6aEwOeY8lNwndt75vWgCoOzhZxPtUEIGpLIeSQOzE35j1mJ4Zi8E5UoyZ_QiI0wtEyRnCqHJ8In3raugma_ZKIeYFRGq059J3WhEUNGof1_L6owyiD')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Dining Room</h3>
+<button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-2 font-label-sm text-label-sm uppercase hover:bg-white hover:text-charcoal transition-colors">Shop Now</button>
+</div>
+</div>
+<!-- Workspace -->
+<div class="md:col-span-4 group relative overflow-hidden bg-bone">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A focused home office setup with a sleek wooden desk, ergonomic sage green chair, and minimal desktop accessories, illuminated by a warm brass desk lamp." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcl7s5XCd2VhYBMJEyE0YOuLprVcUJI1XSR6t_X-Yb0g68T9hdUHeLeFrfDVTn80NfOcdjhCTON9zjaNiW0rKEVIret3bGdCByS-iRdm5nlHrSwmMeCXKkKHdhesXLVHiq5Pu695CoEvo-XqnMmt-ikhQ75mIgiRnEFwX49jdEqkHMINgD9T7Q477RCCTOYW2_cCcoYjx04JOOCp-_mjB1pdbYL6tSwIj0ARxHooXO9_AeSQ2cu5PO')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Workspace</h3>
+<button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-2 font-label-sm text-label-sm uppercase hover:bg-white hover:text-charcoal transition-colors">Browse</button>
+</div>
+</div>
+<!-- Bedroom (Extra for Layout Balance) -->
+<div class="md:col-span-8 group relative overflow-hidden bg-bone">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A serene bedroom scene featuring a low-profile oak bed frame with layered linen bedding in sage and cream colors, soft lighting, and natural textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2t4eaes6fAfDDsoFDEIbM2GssCBoBjlQ-e73sn9t0D2ZwuE_ih5LpEHsYRH1ScVGzzJjDRo0ux8ffN84uyeccTSoM0ckZtAeUA_wMZm1gDkx9bWab6ES_-fA_VHi72X3hSSamvW5hUeSmGEC4iJ5QdIr2rq5M5glVhA7byw1HRztOh_cPa4t6aqTHgZ-TYzu7H574ROAZIE3ec6SDASgw4XPwbyy7hI5KjqjImrMxDd6zaY6PcebS')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-right right-8">
+<h3 class="font-headline-md text-headline-md text-white mb-2">Bedroom</h3>
+<button class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-6 py-2 font-label-sm text-label-sm uppercase hover:bg-white hover:text-charcoal transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Shoppable Room Preview -->
+<section class="bg-surface-container py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="text-center mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Interact with our curated spaces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Click on the pulse points to discover the pieces that make this room complete. Every item is hand-selected for quality and timeless design.</p>
+</div>
+<div class="relative w-full max-w-4xl mx-auto shoppable-image-container rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-auto object-cover" data-alt="A professional wide-angle shot of a styled Scandinavian living room featuring a boucle sofa, a marble side table, and a large abstract rug, perfect for product interaction tags." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE9phBt5eiVKCfnSEyQDtmtljaFc_x4ltOicyQCigse9y-i3oyJ4p3YRx5BCLyPxOh00vLzy4UhW9m8zGoWt81n7cLCz4IQv_O_DwZvERF8FSi3WqVhmo4z8xjZ1t081rmWvz5JurIlLK4uU_GMCMx05Z60jCv0OOJ4iXZnOztmfQmy41PF5ggQCSHt0_UG2SGE5JpYuo2v5xbXXxU3-xapavfdqJz8uhFEt6yHhE2TDs6EfCqbs5q"/>
+<!-- Hotspot 1: Sofa -->
+<div class="absolute top-[55%] left-[40%] group">
+<div class="relative">
+<div class="absolute -inset-2 bg-white/30 rounded-full hotspot-pulse"></div>
+<div class="w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg border border-primary/10 z-10 relative">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 transition-all duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0">
+<div class="bg-bone p-4 rounded-lg shadow-xl border border-outline-variant/30 w-48">
+<p class="font-label-md text-label-md text-primary mb-1">Malmö Bouclé Sofa</p>
+<p class="font-label-sm text-label-sm text-secondary mb-3">$1,499.00</p>
+<button class="w-full bg-primary text-white py-2 rounded-md text-[10px] uppercase font-bold tracking-widest hover:bg-deep-forest transition-colors">Add to Bag</button>
+</div>
+<div class="w-3 h-3 bg-bone rotate-45 mx-auto -mt-1.5 border-r border-b border-outline-variant/30"></div>
+</div>
+</div>
+<!-- Hotspot 2: Table -->
+<div class="absolute top-[65%] left-[20%] group">
+<div class="relative">
+<div class="absolute -inset-2 bg-white/30 rounded-full hotspot-pulse"></div>
+<div class="w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg border border-primary/10 z-10 relative">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 transition-all duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0">
+<div class="bg-bone p-4 rounded-lg shadow-xl border border-outline-variant/30 w-48">
+<p class="font-label-md text-label-md text-primary mb-1">Hansen Oak Table</p>
+<p class="font-label-sm text-label-sm text-secondary mb-3">$420.00</p>
+<button class="w-full bg-primary text-white py-2 rounded-md text-[10px] uppercase font-bold tracking-widest hover:bg-deep-forest transition-colors">Add to Bag</button>
+</div>
+<div class="w-3 h-3 bg-bone rotate-45 mx-auto -mt-1.5 border-r border-b border-outline-variant/30"></div>
+</div>
+</div>
+<!-- Hotspot 3: Lamp -->
+<div class="absolute top-[35%] left-[70%] group">
+<div class="relative">
+<div class="absolute -inset-2 bg-white/30 rounded-full hotspot-pulse"></div>
+<div class="w-6 h-6 bg-white rounded-full flex items-center justify-center cursor-pointer shadow-lg border border-primary/10 z-10 relative">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+</div>
+</div>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 opacity-0 transition-all duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transform translate-y-2 group-hover:translate-y-0">
+<div class="bg-bone p-4 rounded-lg shadow-xl border border-outline-variant/30 w-48">
+<p class="font-label-md text-label-md text-primary mb-1">Nordic Brass Floor Lamp</p>
+<p class="font-label-sm text-label-sm text-secondary mb-3">$185.00</p>
+<button class="w-full bg-primary text-white py-2 rounded-md text-[10px] uppercase font-bold tracking-widest hover:bg-deep-forest transition-colors">Add to Bag</button>
+</div>
+<div class="w-3 h-3 bg-bone rotate-45 mx-auto -mt-1.5 border-r border-b border-outline-variant/30"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community Section -->
+<section class="py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-edge">
+<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+<div class="order-2 md:order-1">
+<img class="rounded-lg shadow-lg w-full h-[500px] object-cover" data-alt="A lifestyle shot of a woman comfortably reading a book in a sun-drenched Scandinavian living room corner, surrounded by soft textiles and greenery, embodying a peaceful domestic life." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOZ47q0xMLaw3rXnbvLhl9lBKfSIRiIc_uMphOcodnOfY9TneenbiSveLOOSmcJR7fJAyJL7-kVhAzF5sJlFHiTDs-0hjGX4zqxc5iJpnBi64j3MwuZQRwd_y7kJw1DQwSINiZcdVEfLx34kinUxoPq7r-z3wg5CXDDvFuB1oQqQiB_B74GnXanFYew1tKh6PlHujF-mywJ_Gm9UOvbLxwf4yQ6owF0THFx0kCYDHILw43RgW1NAIT"/>
+</div>
+<div class="order-1 md:order-2">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-4 block">The Nest Journal</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Inspired by the North. Crafted for your home.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                            Every piece in our collection tells a story of heritage and innovation. Join our community to receive design inspiration, early access to new collections, and invitations to private showroom events.
+                        </p>
+<form class="flex flex-col gap-4">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 focus:ring-0 focus:border-secondary transition-colors font-body-md text-body-md" placeholder="Your email address" type="email"/>
+</div>
+<button class="bg-primary text-white px-10 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-deep-forest transition-all self-start">
+                                Subscribe
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-highest mt-stack-lg border-t border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-edge py-stack-lg max-w-container-max mx-auto">
+<!-- Brand & Info -->
+<div class="flex flex-col gap-stack-sm">
+<span class="font-headline-md text-headline-md font-bold text-deep-forest tracking-tight">NordicNest</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xs">Crafting soulful spaces since 2012. We believe that a well-designed home is the foundation of a meaningful life.</p>
+<div class="flex gap-4 mt-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<!-- Shop Links -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Collections</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Living Room</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Dining &amp; Kitchen</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Bedroom Haven</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Office &amp; Studio</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Outdoor Living</a></li>
+</ul>
+</div>
+<!-- Service Links -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">Customer Care</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Care Guides</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Store Locator</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Warranty Info</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<!-- Corporate Links -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest">About Us</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Our Journal</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Sustainability</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Design Services</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Careers</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Footer -->
+<div class="border-t border-outline-variant/30 py-8 px-margin-edge max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-outline">© 2024 NordicNest AB. Handcrafted in Scandinavia.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Accessibility</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-primary transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+<!-- Cart Drawer (Overlay) -->
+<div class="fixed inset-0 z-[60] invisible pointer-events-none transition-all duration-500" id="cart-drawer">
+<div class="absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500" id="cart-overlay"></div>
+<div class="absolute right-0 top-0 h-full w-full max-w-md bg-background translate-x-full transition-transform duration-500 p-margin-edge flex flex-col shadow-2xl" id="cart-content">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-primary">Your Basket</h3>
+<button class="text-primary p-2 hover:bg-bone transition-colors rounded-full" id="close-cart">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-outline-variant text-6xl mb-4">shopping_basket</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your basket is currently empty.</p>
+<button class="mt-6 text-primary border-b border-primary pb-1 font-label-md text-label-md hover:opacity-70 transition-opacity uppercase tracking-wider">Start Shopping</button>
+</div>
+<div class="mt-auto pt-8 border-t border-outline-variant/30">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label-md text-label-md uppercase text-on-surface-variant">Estimated Total</span>
+<span class="font-headline-md text-headline-md text-primary">$0.00</span>
+</div>
+<button class="w-full bg-charcoal text-white py-5 font-label-md text-label-md uppercase tracking-widest hover:bg-deep-forest transition-colors opacity-50 cursor-not-allowed">
+                    Checkout
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Simple Interaction logic
+        const cartBtn = document.querySelector('[class*="shopping_bag"]')?.parentElement;
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartContent = document.getElementById('cart-content');
+        const closeCart = document.getElementById('close-cart');
+
+        const toggleCart = (open) => {
+            if (open) {
+                cartDrawer.classList.remove('invisible');
+                cartDrawer.classList.add('pointer-events-auto');
+                cartOverlay.classList.replace('opacity-0', 'opacity-100');
+                cartContent.classList.replace('translate-x-full', 'translate-x-0');
+            } else {
+                cartOverlay.classList.replace('opacity-100', 'opacity-0');
+                cartContent.classList.replace('translate-x-0', 'translate-x-full');
+                setTimeout(() => {
+                    cartDrawer.classList.add('invisible');
+                    cartDrawer.classList.remove('pointer-events-auto');
+                }, 500);
+            }
+        }
+
+        cartBtn?.addEventListener('click', () => toggleCart(true));
+        closeCart?.addEventListener('click', () => toggleCart(false));
+        cartOverlay?.addEventListener('click', () => toggleCart(false));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
