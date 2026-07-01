@@ -18,7 +18,7 @@ export default function Hero() {
         <div 
           className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] ease-out hover:scale-105" 
           style={{ 
-            backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCwNA99j5us6-VSkqN4H54zS5gG7YHebZUCSgNHyIgGNRuKK_hme06i7T6RIunyj9ZRtbgt6nYWSUtqE7tlxe676ZDavx53awh_xOmB0elAgHk4M9GiELFtPwPkqTxh6WgsqXOjA_eU8NczR8L80EOgB3XmgFNo_dxuR8TGxdQBe0nM9NITEnWegWSSA-V8NhkU-_Fz5fZC8iUh5iZjvBTdt6aCX_X-XAJfYfr4-LBHtPxTA-dXc9Ck1671eTgmri6aw')" 
+            backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCwNA99j5us6-VSkqN4H54zS5gG7YHebZUCSgNHyIgGNRuKK_hme06i7T6RIunyj9ZRtbgt6nYWSUtqE7tlxe676ZDavx53awh_xOmB0elAgHk4M9GiELFtPwPkqTxh6WgsqXOjA_eU8NczR8L80EOgB3XmgFNo_dxuR8TGxdQBe0nM9NITEnWegWSSA-V8NhkU-_Fz5fZC8iUh5iZjvBTdt6aCX_X-XAJfYfr4-LBHtPxTA-dXc9Ck1671eTgmri6aw=s2000')" 
           }}
         />
         <div className="absolute inset-0 bg-black/10" />
